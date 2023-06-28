@@ -1,0 +1,135 @@
+.fullpage{
+    height: 2800px;
+    /* border: 2px solid rosybrown; */
+     display:flex;
+     flex-wrap: nowrap;
+     
+    
+   
+   
+}
+.taglist{
+ height: 2400px;
+ width: 25%;
+ /* border: 2px solid black; */
+ border-right:1px solid #fff;
+ padding: 1%;
+ 
+
+}
+.fullview{
+    height: 800px;
+   width: 75%;
+    /* border: 2px solid rgba(0, 166, 255, 0.501);  */
+}
+
+.noiselogo{
+   height: 50px;
+}
+.noiselogo >img{
+    height: 50px;
+    /* border-right: 2px solid rgba(31, 30, 30, 0.501); */
+}
+h4{
+    display: inline-block;
+    
+    font-family: "Amazon Ember",Arial,sans-serif;
+    font-size: medium;
+  
+    color: black;
+   
+}
+h6{
+    margin-left: 141px;
+    margin-top: -20px;
+    font-weight: lighter;
+    color: rgb(3, 207, 214);
+}
+.viratbox{
+    height: 260px;
+    width: 100%;
+    /* margin-top: -30%; */
+    /* border: 2px solid green; */
+    display: flex;
+   
+   
+   
+}
+.small1{
+    height: 250px;
+    /* border: 2px dotted black; */
+    margin: 2px 5px;
+    background-color: #FFF;
+    box-shadow: -28px 0px 30px #fff;
+}
+.small1 >img{
+    height: 150px;
+}
+.small2{
+    margin: 3px 3px;
+    height: 30px;
+    width: 75%;
+    justify-content: center;
+    background-color: brown;
+   color: black;
+}
+del{
+  color: gray;
+  margin-top: 0%;
+}
+.res{
+    font-size: 30px;
+    font-family:"Amazon Ember",Arial,sans-serif;
+    margin-top: 1%;
+}
+.watchrate{
+    /* height: 250px; */
+    /* border: 2px solid red; */
+   margin-top: 1%;
+    display: flex;
+   
+}
+a{
+    color: black;
+}
+ .watchrate >img{ 
+    /* height:240px; */
+    /* width: 200px; */
+    display: inline-block; 
+}
+.watchmenu{
+    padding: 1%;
+}
+.menu22{
+    height: 300px;
+    width: 200px;
+}
+.watch1{
+    font-size: 18px;
+    font-weight: 600;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    margin:10px 10px;
+    
+   
+}
+.checked{
+   color: orange;
+  
+}
+.small3 >p{
+    width: 150px;
+    background-color: brown;
+
+}
+li{
+    color: rgba(3, 3, 3, 0.818);
+}
+.taglist{
+    color: rgba(3, 3, 3, 0.818);
+}
+a:hover{
+    color: rgba(183, 140, 61, 0.733);
+}
+h5{
+    color: rgb(0, 0, 0);
+}

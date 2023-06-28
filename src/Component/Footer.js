@@ -30,7 +30,7 @@ const Footer = () =>{
                 </ul>
             </div>
             <div className="aboutamazon">
-                Social Links
+               <p className="ptag"> Social Links</p>
                 <ul>
                     <div className="footlink">
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cd/Facebook_logo_%28square%29.png/800px-Facebook_logo_%28square%29.png" alt="facebook" className="footlink footlink1"></img>

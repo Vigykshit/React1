@@ -1,2 +1,69 @@
+.dotbox{
+    height: 500px;
+    width: 100%;
+    /* border: 5px solid black; */
+    position: relative;
+    display: inline-block;
+    padding: 1%;
+   
+    /* z-index: 100; */
+    margin-top: 23%;
+    background-color: #E3E6E6;
+}
 
+.bear{
+    height: 400px;
+    width: 22%;
+   background-color: #fff;
+   display: inline-block;
+    margin-left: 2.4%;
+    margin-top: 1%;
+    padding: 1%;
+}
 
+.container > a{
+    color: rgb(209, 46, 46);
+}
+
+.container1{
+    font-size: larger;
+    font-weight:bold ;
+    margin-left: 1%;
+    color: black;
+}
+.container2 > img{
+    height: 200px;
+    width: 98%;
+    margin-top: 5%;
+    
+}
+.container3{
+  line-height: 5; 
+  color: black;
+}
+.containerA >img{
+width: 98%;
+margin-top: 14%;
+
+}
+.autotan{
+    float: left;
+margin-left: 3%;
+margin-top: 5%;
+}
+
+.autotune{
+    width: 140;
+   
+}
+.autotone{
+    font-size: 14;
+}
+.containerC>img{
+    width: 98%;
+    margin-top: 5%;
+}
+
+a:hover{
+    color: blue;
+}

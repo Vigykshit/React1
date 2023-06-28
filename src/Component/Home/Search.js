@@ -18,11 +18,11 @@ const Search = () => {
 
     return(
         <>
-        <div class="itembox">
+        
              
               <Searchdisplay categoryData={categoryType}/>
-            </div>
-        
+            
+       
         
             
            
