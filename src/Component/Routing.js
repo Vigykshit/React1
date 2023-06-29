@@ -4,8 +4,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Home from './Home/Home';
 import Main from './Main';
-import Listing from './listing/listingDisplay';
-import listing from './listing/listingLogic';
+import Listing from './listing/listingLogic';
  const Routing = () =>{
     return(
         <div>

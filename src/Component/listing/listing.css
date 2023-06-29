@@ -1,5 +1,5 @@
 .fullpage{
-    height: 2800px;
+    /* height: 2800px; */
     /* border: 2px solid rosybrown; */
      display:flex;
      flex-wrap: nowrap;
@@ -9,7 +9,7 @@
    
 }
 .taglist{
- height: 2400px;
+ height: 1700px;
  width: 25%;
  /* border: 2px solid black; */
  border-right:1px solid #fff;
@@ -20,9 +20,24 @@
 .fullview{
     height: 800px;
    width: 75%;
+   display: inline-block;
     /* border: 2px solid rgba(0, 166, 255, 0.501);  */
 }
 
+.star{
+    height: 20px;
+    /* border: 2px black solid; */
+    font-size: 20px;
+    font-family: "Amazon Ember",Arial,sans-serif;
+    color: black;
+    font-weight: 400;
+}
+.content{
+    margin-top: 6px;
+}
+.star2{
+    color: rgb(61, 74, 70);
+}
 .noiselogo{
    height: 50px;
 }
@@ -108,7 +123,7 @@ a{
     font-size: 18px;
     font-weight: 600;
     font-family: "Amazon Ember",Arial,sans-serif;
-    margin:10px 10px;
+    margin-left:5px;
     
    
 }
