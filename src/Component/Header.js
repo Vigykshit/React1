@@ -1,13 +1,14 @@
 import React from "react";
-import'./Header.css'
+import'./Header.css';
+// import {Link} from "react-router-dom";
 function Header() {
     return (
         <>
             <header>
                 <nav className="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
                     <div className="container-fluid ">
-                        <a href="#" className="navbar-brand">
-                            <img src="https://zeevector.com/wp-content/uploads/Amazon-Logo-White@zeevector.png" alt="amazon" className="logo1"></img>
+                        <a href="/" className="navbar-brand">
+                            <img src="https://zeevector.com/wp-content/uploads/Amazon-Logo-White@zeevector.png" alt="amazon" className="logo1"/>
                         </a>
                         <button className="navbar-toggler " type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
                             <span className="navbar-toggler-icon"></span>

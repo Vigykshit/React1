@@ -12,7 +12,7 @@ const ListingDisplay= (props) => {
                <div className='watchrate' key={item._id}> 
                <img src={item.Image} alt={item.product_name} className="menu22"/>
                <div className="watchmenu">
-                <Link to ={"/"}> 
+                <Link to ={`/item?productId=${item.product_id}`}> 
                <p className="watch1">{item.product_name}</p>  </Link> 
               
                <i className="fa fa-star checked"></i>
@@ -53,7 +53,7 @@ const ListingDisplay= (props) => {
             return(
                 <div>
                     <h2>Loading</h2>
-                    <img src="#" alt ="loader"/>
+                    <img src="/Images/loader.gif" alt ="loader"/>
                 </div>
             )
         }

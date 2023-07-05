@@ -5,6 +5,8 @@ import Footer from './Footer';
 import Home from './Home/Home';
 import Main from './Main';
 import Listing from './listing/listingLogic';
+import DetailDisplay from './orderDetails/detailsLogic';
+
  const Routing = () =>{
     return(
         <div>
@@ -15,6 +17,7 @@ import Listing from './listing/listingLogic';
                    <Route index element={<Home/>}/>
                    <Route path='home' element={<Home/>}/>
                    <Route path='listing/:categoryId' element={<Listing/>}/>
+                   <Route path='details' element={<DetailDisplay/>}/>
                 </Routes>
                 <Footer/>
             </BrowserRouter>
