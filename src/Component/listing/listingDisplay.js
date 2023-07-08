@@ -9,10 +9,10 @@ const ListingDisplay= (props) => {
                 return listData.map((item) =>{
                      return(
                        
-               <div className='watchrate' key={item._id}> 
+               <div className='watchrate' key={item.product_id}> 
                <img src={item.Image} alt={item.product_name} className="menu22"/>
                <div className="watchmenu">
-                <Link to ={`/item?productId=${item.product_id}`}> 
+                <Link to ={`/itemdetail?productId=${item.product_id}`}> 
                <p className="watch1">{item.product_name}</p>  </Link> 
               
                <i className="fa fa-star checked"></i>

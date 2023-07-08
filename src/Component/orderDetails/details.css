@@ -11,6 +11,31 @@
   padding: 2%;
   }
   
+
+.dotlogic{
+    height: 300px;
+    width: 150px;
+    background-color: brown;
+}
+.main{
+    /* height: 2000px; */
+    width: 100%;
+    
+    border: 5px solid green;
+}
+
+.image{
+    height: 400px;
+    width: 400px;
+    margin-left: 5%;
+}
+.image >img{
+   height: 300px;
+   width: 100%;
+}
+
+
+
   .three{
       height: 1000px;
       width: 15%;

@@ -17,7 +17,7 @@ import DetailDisplay from './orderDetails/detailsLogic';
                    <Route index element={<Home/>}/>
                    <Route path='home' element={<Home/>}/>
                    <Route path='listing/:categoryId' element={<Listing/>}/>
-                   <Route path='details' element={<DetailDisplay/>}/>
+                   <Route path='itemdetail' element={<DetailDisplay/>}/>
                 </Routes>
                 <Footer/>
             </BrowserRouter>
