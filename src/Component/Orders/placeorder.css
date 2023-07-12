@@ -1,0 +1,11 @@
+.boom{
+    width: 1000px;
+    height: 500px;
+    padding: 2%;
+    margin-bottom: 1%;
+}
+
+.boom:hover{
+    color:  #febd69;
+
+}

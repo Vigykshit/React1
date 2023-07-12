@@ -26,8 +26,8 @@ function Header() {
                                 <button className="btn btn-primary " type="button"><i className="bi bi-search"></i></button>
                             </form>
                             <button className="btn btn-primary f2"><i className="bi bi-sun"></i></button>
-                            <button type="button" className="btn btn-primary me-2">SignIn</button>
-                            <button type="button" className="btn btn-primary">SignUp</button>
+                            <Link to="register" className="btn btn-primary me-2">SignUp</Link>
+                            <Link to="login" className="btn btn-primary">login</Link>
                         </div>
                     </div>
                 </nav>

@@ -2,12 +2,13 @@ import React,{useState,useEffect} from "react";
 import './details.css';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
-import { useSearchParams} from 'react-router-dom';
+import {useSearchParams, useNavigate} from 'react-router-dom';
 
 const base_url ="https://amazonapi-mjkr.onrender.com";
 
 const DetailDisplay = () => {
-    
+
+ let navigate = useNavigate()   
 let [searchParams] = useSearchParams()
 let [itemDetails,setitemDetails] = useState()
 
@@ -22,7 +23,11 @@ useEffect(() => {
    
       itemDetail()
   
-},[]);
+},[searchParams]);
+const proceed = () => {
+  navigate(`/placeOrder/${itemDetails.product_name}`)
+}
+
    const renderDetails = () => {
       if (itemDetails)
       return (
@@ -123,11 +128,7 @@ useEffect(() => {
                  </div>
                  <hr/>
                 <p className="one5">About this item</p> 
-                     <p>1.85” HD Display Smartwatch: Featuring a radiant 1.85” HD display, Marv Neo shines bright, exuding elegance and brilliance. The watch has 560 nits peak brightness ensuring more detail, and extra clarity. Marv Neo is a fine, classNameic smart watch, making a bold style statement.</p>
-                     <p>The smart watch will run uninterrupted for at least 7 days on a single charge (without heavy usage). If you use BT calling, Marv neo will run for about 2 days.</p>
-                     <p>Charging Specifications: Marv Super smartwatch requires 2 hours to be fully charged Use a 3.7V to 5V adapter. Ensure you charge your smartwatch for at least 30-40 mins to get at least 20% charge.</p>
-                     <p>AI Voice Assistance: Innovation at its best. Speak to your smartwatch, and simply execute tasks at your command. Be it a phone call, setting an alarm, or sending a text, Marv Neo is capable of executing tasks for you.</p>
-                     <p>Smart watch with Bluetooth Calling: Equipped with the latest, enhanced BT setup, you can handle calls from your wrist without waking your phone. The watch has an in-built speaker and microphone to give you the best calling experience.</p>
+                    {itemDetails.about}
             </div>
          
          
@@ -144,7 +145,7 @@ useEffect(() => {
                <input type="checkbox"/>1 Year Extended Warranty for ₹99.00 
                
                {/* <button className="btn btn-primary one9">Add to Cart</button> */}
-               <button className="btn btn-info one9">Buy Now</button>
+               <button className="btn btn-info one9" onClick={proceed}>Buy Now</button>
                <hr/>
                 <input type="checkbox" className="rado"/>Add Gift Option
                <hr/>

@@ -6,6 +6,10 @@ import Home from './Home/Home';
 import Main from './Main';
 import Listing from './listing/listingLogic';
 import DetailDisplay from './orderDetails/detailsLogic';
+import PlaceOrder from './Orders/PlaceOrder';
+import ViewOrder from './Orders/ViewOrder';
+import Login from './login/loginComponent';
+import Register from './login/registerComponent';
 
  const Routing = () =>{
     return(
@@ -18,6 +22,10 @@ import DetailDisplay from './orderDetails/detailsLogic';
                    <Route path='home' element={<Home/>}/>
                    <Route path='listing/:categoryId' element={<Listing/>}/>
                    <Route path='itemdetail' element={<DetailDisplay/>}/>
+                   <Route path='placeorder/:product_name' element={<PlaceOrder/>}/>
+                   <Route path='viewOrder' element={<ViewOrder/>}/>
+                   <Route path="login" element={<Login/>}/>
+                   <Route path="register" element={<Register/>}/>
                 </Routes>
                 <Footer/>
             </BrowserRouter>
