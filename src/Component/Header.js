@@ -50,7 +50,7 @@ function Header() {
                             </ul>
                         </li>
                         <li className="nav-item">
-                            <a href="amazonlisting.html" className="nav-link">SmartWatch</a>
+                            <a href="/item?categoryId=1" className="nav-link">SmartWatch</a>
                         </li>
                         <li className="nav-item">
                             <a href="Amazonmobile.html" className="nav-link">Mobiles</a>
@@ -72,10 +72,7 @@ function Header() {
                         </li>
                         <li className="nav-item">
                             <a href="#" className="nav-link">Fashion </a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="#" className="nav-link">New Releases</a>
-                        </li>
+                       </li>
                     </ul>
                 </nav>
             </header>

@@ -34,6 +34,7 @@ const Image = () =>{
               </div>
         </div>
         
+        
         </>
     )
 }

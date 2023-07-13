@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import { useParams} from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import "./placeorder.css";
+import Header from '../Header';
 
 const url = "https://amazonapi-mjkr.onrender.com/placeorder"
 
@@ -17,7 +18,7 @@ const PlaceOrder = () => {
         product_name: params.product_name,
         name: "",
         email: "",
-        Price: Math.floor(Math.random()*10000),
+        Price: Math.floor(Math.random()*1000000),
         phone: "",
         address: ""
     };
@@ -48,7 +49,7 @@ const PlaceOrder = () => {
 
     return(
         <>
-            
+            <Header/>
             <div className="container boom">
                 <hr/>
                 <div className="panel panel-primary">

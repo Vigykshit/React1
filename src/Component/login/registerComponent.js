@@ -2,16 +2,16 @@ import React,{useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Header';
 
-const url = "http://3.17.216.66:5000/api/auth/register"
+const url = "https://amazonapi-mjkr.onrender.com/register"
 
 const Register = () => {
 
     let navigate = useNavigate();
     const initialValues = {
-        name: "",
-        email: "",
-        password:'',
-        phone: ""
+        name: "bhanu",
+        email: "bhanu1@test.com",
+        password:'123456',
+        phone: "9876544567"
     };
 
     const [values, setValues] = useState(initialValues);

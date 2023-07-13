@@ -3,7 +3,7 @@ import './details.css';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import {useSearchParams, useNavigate} from 'react-router-dom';
-
+import Header from "../Header";
 const base_url ="https://amazonapi-mjkr.onrender.com";
 
 const DetailDisplay = () => {
@@ -32,6 +32,7 @@ const proceed = () => {
       if (itemDetails)
       return (
         <>
+        <Header/>
         <Link to ="/orders">
        <p className="word">{itemDetails.product_name}</p></Link>
         <div className="fullpage">

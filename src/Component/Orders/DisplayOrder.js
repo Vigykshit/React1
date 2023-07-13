@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Header from '../Header';
 const Display = (props) => {
 
     const renderData = ({orderData}) => {
@@ -20,6 +20,8 @@ const Display = (props) => {
     }
 
     return(
+        <>
+        <Header/>
         <div className="container" style={{width:"1000px" , height:"auto" ,backgroundColor:" #febd69"}}>
             <center><h3><u>Your Order's</u></h3></center>
             <table className="table">
@@ -38,7 +40,7 @@ const Display = (props) => {
                 </tbody>
             </table>
         </div>
-
+</>
     )
 
 }

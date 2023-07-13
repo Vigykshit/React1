@@ -2,6 +2,7 @@ import React,{useState,useEffect} from "react";
 import './Search.css';
 import Searchdisplay from './Searchdisplay';
 
+
 const base_url = "https://amazonapi-mjkr.onrender.com";
 
 const Search = () => {
@@ -18,7 +19,7 @@ const Search = () => {
 
     return(
         <>
-        
+       
              
               <Searchdisplay categoryData={categoryType}/>
             

@@ -3,6 +3,7 @@ import './listing.css';
 import {useParams} from 'react-router-dom';
 import ListingDisplay from './listingDisplay';
 import axios from 'axios';
+import Header from '../Header';
 
 const base_url = "https://amazonapi-mjkr.onrender.com";
 
@@ -20,6 +21,7 @@ const ListingLogic = () => {
         },[])
     return(
         <>
+        <Header/>
         <div class="raw1">
         <div className='fullpage'>
             <div className='taglist'>

@@ -23,7 +23,7 @@ const ListingDisplay= (props) => {
                <div className="small3">
                  <p>Deal of the day</p>
                  <h5><sup>₹</sup>{item.Price}</h5>
-                 <del><sup>₹</sup>{item.OldPrice}</del>(70%off)
+                 <del><sup>₹</sup>{item.OldPrice}</del>☝️{item.off}
                </div>
               
                <div className='star1'>

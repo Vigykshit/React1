@@ -1,6 +1,7 @@
 import React from "react";
 import {Link} from 'react-router-dom';
 import './Search.css';
+
 const Searchdisplay = (props) =>{
     
         const Category = ({categoryData}) => {
@@ -8,7 +9,8 @@ const Searchdisplay = (props) =>{
                 return categoryData.map((item) => {
                     return(
     <Link to={`/listing/${item.category_id}`}>
-        <> 
+        <>
+        
           <div className="bear">
               <div className="container1"> 
                {item.content}
@@ -31,9 +33,12 @@ const Searchdisplay = (props) =>{
  }
 }
 return(
+    <>
+   
     <div className="dotbox">
         {Category(props)} 
     </div>
+    </>
 )
 
    
