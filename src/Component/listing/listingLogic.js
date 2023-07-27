@@ -2,30 +2,41 @@ import React,{useState,useEffect} from 'react';
 import './listing.css';
 import {useParams} from 'react-router-dom';
 import ListingDisplay from './listingDisplay';
-import axios from 'axios';
+import axios from 'axios'; 
+import CostFilter from '../filters/costFilter';
+import CuisineFilter from '../filters/cuisineFilter';
+import BrandFilter from '../filters/brandFilter';
+import ArrivalFilter from '../filters/arrivalFilter';
 import Header from '../Header';
+
 
 const base_url = "https://amazonapi-mjkr.onrender.com";
 
 const ListingLogic = () => {
     let params = useParams();
 
-    const[categoryList,setCategoryList] = useState();
-    
+    const [catList,setCatList] = useState();
+    let categoryid = params.categoryId;
     useEffect(() =>{
-        let categoryid =params.categoryId;
+      
+        sessionStorage.setItem('categoryId' ,categoryid)
           axios.get(`${base_url}/item?categoryId=${categoryid}`)
          .then((res) => {
-            setCategoryList(res.data)
+            setCatList(res.data)
          })
-        },[])
+        },[categoryid])
+
+        const setDataPerFilter = (data) => {
+          setCatList(data)
+        }
+
     return(
         <>
         <Header/>
-        <div class="raw1">
+        <div className="raw1">
         <div className='fullpage'>
             <div className='taglist'>
-            <h5>Delivery Day</h5>
+            {/* <h5>Delivery Day</h5>
              <ul>
              <input type="radio"/>Get it by Tomorrow
              <br/>
@@ -81,11 +92,19 @@ const ListingLogic = () => {
             <li>35% Off or more</li>
             <li>50% Off or more</li>
             <li>70% Off or more</li></a>
-          </ul>
+          </ul> */}
+                       <CuisineFilter categoryId={categoryid}
+                        categoryPerFilter={(data) => {setDataPerFilter(data)}}/>
+                        <CostFilter categoryId={categoryid}
+                        categoryPerCost={(data) => {setDataPerFilter(data)}}/>
+                         <BrandFilter categoryId={categoryid}
+                        categoryPerBrand={(data) => {setDataPerFilter(data)}}/>
+                          <ArrivalFilter categoryId={categoryid}
+                        categoryPerArrival={(data) => {setDataPerFilter(data)}}/>
             </div>
            
 
-            <ListingDisplay listData={categoryList}/>
+            <ListingDisplay listData={catList}/>
           </div>
         
         </div>

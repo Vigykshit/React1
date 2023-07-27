@@ -1,7 +1,61 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
 import'./Header.css';
 import {Link} from "react-router-dom";
-function Header() {
+import { useNavigate } from "react-router-dom";
+
+const url ="https://amazonapi-mjkr.onrender.com/user"
+const Header = () => {
+
+    const [userData,setUserData] = useState('')
+    let navigate = useNavigate();
+
+    useEffect(() => {
+        if(sessionStorage.getItem('ltk') !== null){
+            fetch(url,{
+                method:'GET',
+                headers:{
+                    'x-access-token':sessionStorage.getItem('ltk')
+                }
+            })
+            .then((res) => res.json())
+            .then((data) => {
+                setUserData(data)
+            })
+        }
+    },[])
+
+    const handleLogout = () => {
+        sessionStorage.removeItem('ltk');
+        sessionStorage.removeItem('user')
+        setUserData('');
+        navigate('/')
+    }
+
+    const ConditionalHeader =  () => {
+        if(userData){
+            if(userData.name){
+                sessionStorage.setItem('user',JSON.stringify(userData))
+                return(
+                    <>
+                         <Link to="register" className="btn btn-primary me-2">{userData.name}</Link>
+                            {/* <Link to="login" className="btn btn-primary">login</Link> */}
+                        <button onClick={handleLogout} className='btn btn-danger'>
+                         Logout
+                        </button>
+                    </>
+                )
+            }
+        }else{
+                return(
+                    <>
+                        <Link to="register" className="btn btn-primary me-2">SignUp</Link>
+                            <Link to="login" className="btn btn-primary">login</Link>
+                    </>
+                )
+            }
+    }
+
+
     return (
         <>
             <header>
@@ -26,12 +80,12 @@ function Header() {
                                 <button className="btn btn-primary " type="button"><i className="bi bi-search"></i></button>
                             </form>
                             <button className="btn btn-primary f2"><i className="bi bi-sun"></i></button>
-                            <Link to="register" className="btn btn-primary me-2">SignUp</Link>
-                            <Link to="login" className="btn btn-primary">login</Link>
+                            {ConditionalHeader()}
+                           
                         </div>
                     </div>
                 </nav>
-                <br />
+                <br/>
                 <nav className="navbar navbar-expand-sm box1 ">
                     <ul className="nav">
                         <li className="nav-item dropdown">
@@ -50,16 +104,16 @@ function Header() {
                             </ul>
                         </li>
                         <li className="nav-item">
-                            <a href="/item?categoryId=1" className="nav-link">SmartWatch</a>
+                        <Link to={`/listing/1`} className="nav-link"> SmartWatch</Link>
                         </li>
                         <li className="nav-item">
-                            <a href="Amazonmobile.html" className="nav-link">Mobiles</a>
+                        <Link to={`/listing/2`} className="nav-link"> Mobiles</Link>
                         </li>
                         <li className="nav-item">
-                            <a href="amazonauto.html" className="nav-link">Auto Essentials</a>
+                        <Link to={`/listing/3`} className="nav-link"> Auto essentials</Link>
                         </li>
                         <li className="nav-item">
-                            <a href="amazonpharmacy.html" className="nav-link">Amazon Pharma</a>
+                        <Link to={`/listing/4`} className="nav-link"> Amazon Pharma</Link>
                         </li>
                         <li className="nav-item">
                             <a href="#" className="nav-link">Customer Service</a>

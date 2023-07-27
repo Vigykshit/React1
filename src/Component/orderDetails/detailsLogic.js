@@ -11,15 +11,16 @@ const DetailDisplay = () => {
  let navigate = useNavigate()   
 let [searchParams] = useSearchParams()
 let [itemDetails,setitemDetails] = useState()
+// let [categoryId] = useState(sessionStorage.getItem('categoryId'))
+
 
 
 useEffect(() => {
- 
-   let productId = searchParams.getAll('productId')
-   const itemDetail = async() => {
-      const idata =await axios.get(`${base_url}/itemdetail/${productId}`);
-      setitemDetails(idata.data[0])
-   }
+  let productId = searchParams.getAll('productId')
+  const itemDetail = async() => {
+     const idata =await axios.get(`${base_url}/itemdetail?productId=${productId}`);
+     setitemDetails(idata.data[0])
+  }
    
       itemDetail()
   
@@ -35,8 +36,11 @@ const proceed = () => {
         <Header/>
         <Link to ="/orders">
        <p className="word">{itemDetails.product_name}</p></Link>
+       <hr/>
         <div className="fullpage">
+        
             <div className="one">
+           
                 <div id="img" className="carousel slide" data-bs-ride="carousel">
 
                     <div className="carousel-indicators">
@@ -78,7 +82,7 @@ const proceed = () => {
                     <h1>Deal of the day</h1>
                     <h2>{itemDetails.off}</h2>
 
-                    <h5><sup>₹</sup>{itemDetails.price}.00</h5>
+                    <h5><sup>₹</sup>{itemDetails.cost}.00</h5>
                     <p>M.R.P.:<del><sup>₹</sup>{itemDetails.old_price}.00 </del></p>
                     <p>{itemDetails.ratings}</p>
                     <i className="fa fa-star checked"></i>
@@ -111,7 +115,7 @@ const proceed = () => {
                     </tr>
                     <tr>
                         <td className="one8">Screen Size</td>
-                        <td>{itemDetails.display} inches</td>
+                        <td>{itemDetails.display} </td>
                     </tr>
                   </table>
                   <hr/>
@@ -134,11 +138,11 @@ const proceed = () => {
          
          
             <div className="three">
-                <p className="one6"><sup>₹</sup>{itemDetails.price}<sup>00</sup></p>
-                <p>Free Delivery,Thursday</p>
+                <p className="one6"><sup>₹</sup>{itemDetails.cost}<sup>00</sup></p>
+                <p>Free Delivery</p>
 
               <span className="one7">In Stock</span>
-              <p> Sold by Appario Retail Private Ltd and Fulfilled by Amazon.</p>
+              <p> Sold by <u>{itemDetails.brand}</u> and Fulfilled by Amazon.</p>
               <h5>Add a protection plan</h5>
               
                <input type="checkbox"/>1 Year Extended Warranty for ₹59.00

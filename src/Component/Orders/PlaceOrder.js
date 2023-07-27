@@ -18,7 +18,7 @@ const PlaceOrder = () => {
         product_name: params.product_name,
         name: "",
         email: "",
-        Price: Math.floor(Math.random()*1000000),
+       cost:  Math.floor( Math.random()*100000),
         phone: "",
         address: ""
     };
@@ -87,11 +87,11 @@ const PlaceOrder = () => {
                         </div>
                         <div className="row">
                             <div className="col-md-12">
-                                <h2>Total Price is Rs. {values.Price}</h2>
+                                <h2>Total Price is ₹ {values.cost}</h2>
                             </div>
                         </div>
                         <button className='btn btn-primary' onClick={checkout}>
-                                Submit
+                               Place Order
                         </button>
                     </div>
                 </div>

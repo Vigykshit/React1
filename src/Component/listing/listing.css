@@ -103,7 +103,8 @@ del{
     /* border: 2px solid red; */
    margin-top: 1%;
     display: flex;
-   
+    box-shadow: 1px 1px 1px 1px gray;
+   margin-bottom: 1%;
 }
 a{
     color: black;

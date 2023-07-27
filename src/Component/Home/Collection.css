@@ -240,6 +240,13 @@ list-style-type: none;
 height: 45px;
 }
 
+@media screen and (max-width:1500px){
+    .furniture{
+        height: 182px;
+       
+    }
+}
+
 @media screen and (max-width:1400px){
     .furniture{
         height: 178px;
@@ -249,7 +256,7 @@ height: 45px;
  
 @media screen and (max-width:1350px){
     .furniture{
-        height: 176px;
+        height: 174px;
        
     }
     .containerimg{
@@ -259,19 +266,27 @@ height: 45px;
     
 @media screen and (max-width:1300px){
     .furniture{
-        height: 158px;
+        height: 156px;
        
+    }
+    .containerimg >img{
+        width: 800px;
+        align-items: center;
     }
 }
 @media screen and (max-width:1150px){
     .furniture{
-        height: 138px;
+        height: 136px;
        
+    }
+    .containerimg >img{
+        width: 700px;
+        align-items: center;
     }
 }
 @media screen and (max-width:1000px){
     .furniture{
-        height: 125px;
+        height: 124px;
        
     }
 }

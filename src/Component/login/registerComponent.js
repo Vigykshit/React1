@@ -1,3 +1,6 @@
+
+
+
 import React,{useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Header';
@@ -8,10 +11,10 @@ const Register = () => {
 
     let navigate = useNavigate();
     const initialValues = {
-        name: "bhanu",
-        email: "bhanu1@test.com",
-        password:'123456',
-        phone: "9876544567"
+        name: "",
+        email: "",
+        password:'',
+        phone: ""
     };
 
     const [values, setValues] = useState(initialValues);
@@ -37,16 +40,19 @@ const Register = () => {
         .then(navigate(`/login`))
     }
     
+    
 
     return(
         <>
              <Header/>
-            <div className="container">
-                <hr/>
+            <div className="container-fluid" style={{height:"400px" , width:"700px" ,backgroundColor:"#fff" ,marginTop:"5%",marginBottom:"5%"}}>
+               
                 <div className="panel panel-info">
+                    <br/>
                     <div className="panel-heading">
                         <h3>Register</h3>
                     </div>
+                    <hr/>
                     <div className="panel-body">
                        
                         <div className="row">
@@ -72,7 +78,7 @@ const Register = () => {
                             </div>
                             
                         </div>
-                      
+                      <br/>
                         <button className='btn btn-success' onClick={checkout}>
                                 Register
                         </button>

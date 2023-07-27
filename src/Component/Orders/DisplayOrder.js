@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from '../Header';
 const Display = (props) => {
 
     const renderData = ({orderData}) => {
@@ -11,7 +10,7 @@ const Display = (props) => {
                         <td>{item.product_name}</td>
                         <td>{item.name}</td>
                         <td>{item.email}</td>
-                        <td>₹{item.Price}</td>
+                        <td>₹{item.cost}</td>
                         <td>{item.phone}</td>
                     </tr>
                 )
@@ -21,7 +20,6 @@ const Display = (props) => {
 
     return(
         <>
-        <Header/>
         <div className="container" style={{width:"1000px" , height:"auto" ,backgroundColor:" #febd69"}}>
             <center><h3><u>Your Order's</u></h3></center>
             <table className="table">

@@ -9,7 +9,7 @@ const ListingDisplay= (props) => {
                 return listData.map((item) =>{
                      return(
                        
-               <div className='watchrate' key={item.product_id}> 
+               <div className='watchrate' key={item._id}> 
                <img src={item.Image} alt={item.product_name} className="menu22"/>
                <div className="watchmenu">
                 <Link to ={`/itemdetail?productId=${item.product_id}`}> 
@@ -22,7 +22,7 @@ const ListingDisplay= (props) => {
                <i className="fa fa-star"></i>
                <div className="small3">
                  <p>Deal of the day</p>
-                 <h5><sup>₹</sup>{item.Price}</h5>
+                 <h5><sup>₹</sup>{item.cost}</h5>
                  <del><sup>₹</sup>{item.OldPrice}</del>☝️{item.off}
                </div>
               
