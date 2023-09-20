@@ -2,7 +2,7 @@ import React,{useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../Header';
 
-const url = "https://amazonapi-mjkr.onrender.com/register"
+const url = "https://amazonapi-mjkr.onrender.com/user"
 
 const Login = () => {
 

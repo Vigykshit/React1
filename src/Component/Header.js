@@ -2,7 +2,6 @@ import React,{useState,useEffect} from "react";
 import'./Header.css';
 import {Link} from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-
 const url ="https://amazonapi-mjkr.onrender.com/user"
 const Header = () => {
 
@@ -37,7 +36,7 @@ const Header = () => {
                 sessionStorage.setItem('user',JSON.stringify(userData))
                 return(
                     <>
-                         <Link to="register" className="btn btn-primary me-2">{userData.name}</Link>
+                         <Link to="register" className="btn btn-primary me-2 return">{userData.name}</Link>
                             {/* <Link to="login" className="btn btn-primary">login</Link> */}
                         <button onClick={handleLogout} className='btn btn-danger'>
                          Logout
@@ -48,13 +47,14 @@ const Header = () => {
         }else{
                 return(
                     <>
-                        <Link to="register" className="btn btn-primary me-2">SignUp</Link>
+                        <Link to="register" className="btn btn-primary me-2 return">SignUp</Link>
                             <Link to="login" className="btn btn-primary">login</Link>
                     </>
                 )
             }
     }
 
+   
 
     return (
         <>
@@ -70,9 +70,9 @@ const Header = () => {
                         <div className="collapse navbar-collapse" id="mynavbar">
                             <ul className="navbar-nav me-auto">
                                 <li className="nav-item">
-                                    <a href="#" className="nav-link">
-                                        <button onClick="geolocation()" className="a2"><i className="bi bi-geo-alt-fill"></i><p id="weather"></p></button>
-                                    </a>
+                                    <Link to="#" className="nav-link"/>
+                                        <button onChange={geolocation()} className="a2"><i className="bi bi-geo-alt-fill"></i><p id="weather"></p></button>
+                                    
                                 </li>
                             </ul>
                             <form className="d-flex ">
@@ -115,18 +115,6 @@ const Header = () => {
                         <li className="nav-item">
                         <Link to={`/listing/4`} className="nav-link"> Amazon Pharma</Link>
                         </li>
-                        <li className="nav-item">
-                            <a href="#" className="nav-link">Customer Service</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="#" className="nav-link">Electronics</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="#" className="nav-link">Amazon Pay</a>
-                        </li>
-                        <li className="nav-item">
-                            <a href="#" className="nav-link">Fashion </a>
-                       </li>
                     </ul>
                 </nav>
             </header>
@@ -135,5 +123,45 @@ const Header = () => {
 
     );
 }
+
+
+
+
+
+const a = document.getElementById('out');
+const y = document.getElementById('weather');
+
+function geolocation(){
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition)
+    }else{
+        a.innerText="Geo Not Supported"
+    }
+}
+function showPosition(data){
+    console.log(data)
+   const lat = data.coords.latitude
+    const lon = data.coords.longitude
+   
+    // x.innerText = `Latitude is ${lat} and longitude is ${lon}`
+    // const url= `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${b791b0a155de8e57d25ad2af63c5dedf}`
+    const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&mode=json&units=metric&cnt=5&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
+    //api calling
+    fetch(url,{method: 'GET'})
+    //return promise
+    .then((res) =>res.json())
+    //resolve the promise
+    .then((data) => {
+        console.log(data)
+        const cityName = data.city.name;
+    //   let temp = data.list[0].temp.day+" °C"
+        y.innerText= `${cityName}`
+      
+    })
+}
+
+
+
+
 
 export default Header ;
