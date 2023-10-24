@@ -251,38 +251,8 @@ height: 45px;
 /* #root{
     z-index: 1;
 } */
-#coupon{
-    height:600px;
-    width:600px;
-   
-    background-color: rgb(255, 255, 255);
-    z-index:100;
-    position: absolute;
-    margin-top: -150%;
-    margin-left: 35%;
-    visibility: hidden;
-    border-radius: 2%;
-}
-#coupon > button{
-    font-size:50px;
-    text-align: center;
-    background: transparent;
-    border-radius: 2%;
-    border: none;
-}
-#coupon > img {
-    height:400px;
-    width:200px;
-}
-.code p{
-    color: #febd69;
-    text-align: center;
-    
 
-}
-.code >h2 {
-    text-align: center;
-}
+
 h3{
     text-align: center;
 }
@@ -304,6 +274,53 @@ h3{
  
   
 } 
+
+#coupon{
+    height:700px;
+    width:600px;
+  
+    background-color: rgb(255, 255, 255);
+    z-index:100;
+    /* position: absolute; */
+    margin-top: -150%;
+    margin-left: 30%;
+    visibility: hidden;
+    border-radius: 2%;
+}
+#coupon > button{
+    font-size:50px;
+    text-align: center;
+    background: transparent;
+    border-radius: 2%;
+    border: none;
+}
+#coupon > img {
+    height:400px;
+    width:500px;
+    padding-left: 15%;
+}
+.code > {
+    color: #febd69;
+    text-align: center;
+    
+
+}
+.code > h2 {
+    text-align: center;
+}
+
+body{
+    background-image: none;
+    background-color:#fff;
+   color:black; 
+}
+.mydark{
+   background-image: none;
+   background-color:black;
+   color:#fff;
+}
+
+
 
 @media screen and (max-width:1150px){
     .box1{
