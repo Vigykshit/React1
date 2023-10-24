@@ -144,7 +144,7 @@ function showPosition(data){
     const lon = data.coords.longitude
    
     // x.innerText = `Latitude is ${lat} and longitude is ${lon}`
-    // const url= `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&exclude={part}&appid=${b791b0a155de8e57d25ad2af63c5dedf}`
+   
     const url = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${lat}&lon=${lon}&mode=json&units=metric&cnt=5&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
     //api calling
     fetch(url,{method: 'GET'})
